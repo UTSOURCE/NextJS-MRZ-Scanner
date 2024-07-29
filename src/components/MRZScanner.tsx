@@ -13,7 +13,8 @@ import React from "react";
 
 export interface MRZScannerProps{
   isScanning?:boolean;
-  initialized?:()=>void;
+  onInitialized?:()=>void;
+  onScanned?:(results:RecognizedTextLinesResult)=>void;
 }
 
 const MRZScanner: React.FC<MRZScannerProps> = (props:MRZScannerProps) => {
@@ -40,8 +41,8 @@ const MRZScanner: React.FC<MRZScannerProps> = (props:MRZScannerProps) => {
       configure();
       await initCameraEnhancer();
       await initLabelRecognizer();
-      if (props.initialized) {
-        props.initialized();
+      if (props.onInitialized) {
+        props.onInitialized();
       }
       if (props.isScanning === true) {
         startScanning();
@@ -87,6 +88,9 @@ const MRZScanner: React.FC<MRZScannerProps> = (props:MRZScannerProps) => {
     const resultReceiver = new CapturedResultReceiver();
     resultReceiver.onRecognizedTextLinesReceived = (result: RecognizedTextLinesResult) => {
       console.log(result);
+      if (props.onScanned) {
+        props.onScanned(result);
+      }
     };
     router.current.addResultReceiver(resultReceiver);
     if (cameraEnhancer.current) {
