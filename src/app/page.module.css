@@ -3,3 +3,9 @@
   flex-direction: column;
   align-items: center;
 }
+
+.cameraContainer {
+  width: 640px;
+  height: 480px;
+  max-width: 100%;
+}
