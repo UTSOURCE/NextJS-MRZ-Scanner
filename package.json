@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dynamsoft-code-parser": "^2.2.10",
     "dynamsoft-label-recognizer-bundle": "^3.2.3000",
     "next": "14.2.5",
     "react": "^18",
