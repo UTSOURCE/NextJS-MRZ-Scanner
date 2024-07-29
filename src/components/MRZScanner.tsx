@@ -6,13 +6,14 @@ import { CameraEnhancer, CameraView } from "dynamsoft-camera-enhancer";
 import { CaptureVisionRouter, CapturedResultReceiver } from "dynamsoft-capture-vision-router";
 import { CoreModule } from "dynamsoft-core";
 import { LicenseManager } from "dynamsoft-license";
-import { MutableRefObject, useEffect, useRef } from "react";
+import { MutableRefObject, StyleHTMLAttributes, useEffect, useRef } from "react";
 import { LabelRecognizerModule, RecognizedTextLinesResult } from "dynamsoft-label-recognizer";
 import React from "react";
 
 
 export interface MRZScannerProps{
   isScanning?:boolean;
+  initialized?:()=>void;
 }
 
 const MRZScanner: React.FC<MRZScannerProps> = (props:MRZScannerProps) => {
@@ -39,7 +40,9 @@ const MRZScanner: React.FC<MRZScannerProps> = (props:MRZScannerProps) => {
       configure();
       await initCameraEnhancer();
       await initLabelRecognizer();
-      
+      if (props.initialized) {
+        props.initialized();
+      }
       if (props.isScanning === true) {
         startScanning();
       }
