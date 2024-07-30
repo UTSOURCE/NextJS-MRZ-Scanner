@@ -1,7 +1,7 @@
 "use client"
 import styles from "./page.module.css";
 import { useState } from "react";
-import { RecognizedTextLinesResult } from "dynamsoft-label-recognizer-bundle";
+import { RecognizedTextLinesResult } from "dynamsoft-label-recognizer";
 import "../configure" //import the configure file to run configuration
 import MRZResultTable from "@/components/MRZResultTable";
 import dynamic from "next/dynamic";
