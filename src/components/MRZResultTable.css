@@ -1,0 +1,9 @@
+.resultTable {
+  border-collapse: collapse;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.resultTable, .resultTable td, .resultTable th {
+  border: 1px solid;
+}

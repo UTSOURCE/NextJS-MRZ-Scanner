@@ -1,6 +1,7 @@
-import { CodeParser, CodeParserModule, ParsedResultItem } from "dynamsoft-code-parser";
+import { CodeParser, CodeParserModule } from "dynamsoft-code-parser";
 import { CoreModule } from "dynamsoft-core";
 import { useEffect, useRef, useState } from "react";
+import "./MRZResultTable.css"
 
 export interface MRZResultTableProps {
   MRZ:string;
@@ -41,7 +42,6 @@ const MRZResultTable: React.FC<MRZResultTableProps> = (props:MRZResultTableProps
 
   const parse = async () => {
     if (parser.current && props.MRZ) {
-      console.log(props.MRZ)
       let result = await parser.current.parse(props.MRZ);
       let MRZFields = ["documentNumber","passportNumber","issuingState","name","sex","nationality","dateOfExpiry","dateOfBirth"];
       let parsedFields = [];
@@ -64,7 +64,7 @@ const MRZResultTable: React.FC<MRZResultTableProps> = (props:MRZResultTableProps
         <div>{(props.MRZ && parser.current)?"Parsing...":""}</div>
       )}
       {fields &&(
-        <table>
+        <table className="resultTable">
           <thead>
             <tr>
               <th>Field</th>
@@ -73,7 +73,7 @@ const MRZResultTable: React.FC<MRZResultTableProps> = (props:MRZResultTableProps
           </thead>
           <tbody>
             {fields.map(field =>
-              <tr>
+              <tr key={field.name}>
                 <td>{field.name}</td>
                 <td>{field.value}</td>
               </tr>
