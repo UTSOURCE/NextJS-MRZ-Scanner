@@ -74,7 +74,7 @@ const MRZResultTable: React.FC<MRZResultTableProps> = (props:MRZResultTableProps
           </thead>
           <tbody>
             {fields.map(field =>
-              <tr>
+              <tr key={field.name}>
                 <td>{field.name}</td>
                 <td>{field.value}</td>
               </tr>
