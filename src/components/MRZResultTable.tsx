@@ -56,6 +56,8 @@ const MRZResultTable: React.FC<MRZResultTableProps> = (props:MRZResultTableProps
         }
       }
       setFields(parsedFields);
+    }else{
+      setFields(null);
     }
   }
   return (
