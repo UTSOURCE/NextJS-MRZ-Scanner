@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS-MRZ-Scanner
+
+This is a next.js demo of MRZ scanner using [Dynamsoft Label Recognizer](https://www.dynamsoft.com/label-recognition/overview/)
+
+[Online demo](https://next-js-mrz-scanner.vercel.app/)
+
+You can apply for a 30-day trial license [here](https://www.dynamsoft.com/customer/license/trialLicense?product=dlr).
 
 ## Getting Started
 
