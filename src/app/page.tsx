@@ -1,10 +1,16 @@
 "use client"
 import styles from "./page.module.css";
 import { useState } from "react";
-import MRZScanner from "@/components/MRZScanner";
 import { RecognizedTextLinesResult } from "dynamsoft-label-recognizer-bundle";
+import "../configure" //import the configure file to run configuration
 import MRZResultTable from "@/components/MRZResultTable";
-
+import dynamic from "next/dynamic";
+const MRZScanner = dynamic(
+  () => import("../components/MRZScanner"),
+  {
+    ssr: false,
+  }
+);
 export default function Home() {
   const [isScanning,setIsScanning] = useState(false);
   const [initialized,setInitialized] = useState(false);
