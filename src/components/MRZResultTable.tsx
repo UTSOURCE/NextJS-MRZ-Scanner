@@ -1,4 +1,4 @@
-import { CodeParser, CodeParserModule, ParsedResultItem } from "dynamsoft-code-parser";
+import { CodeParser, CodeParserModule } from "dynamsoft-code-parser";
 import { CoreModule } from "dynamsoft-core";
 import { useEffect, useRef, useState } from "react";
 import "./MRZResultTable.css"

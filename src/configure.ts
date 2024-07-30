@@ -4,7 +4,7 @@ import "dynamsoft-label-recognizer";
 import { LicenseManager } from "dynamsoft-license";
 import { CoreModule } from "dynamsoft-core";
 
-if (CoreModule.isModuleLoaded("dlr") == false) {
+if (CoreModule.isModuleLoaded("dlr") === false) {
   /** LICENSE ALERT - README
    * To use the library, you need to first specify a license key using the API "initLicense()" as shown below.
    */
