@@ -25,6 +25,11 @@ export default function Home() {
     }
   }
 
+  const toggleScanning = () => {
+    setMRZ("");
+    setIsScanning(!isScanning)
+  }
+
   return (
     <main className={styles.main}>
       <h2>MRZ Scanner</h2>
@@ -32,7 +37,7 @@ export default function Home() {
         <button disabled>Initializing...</button>  
       )}
       {initialized &&(
-        <button onClick={()=>setIsScanning(!isScanning)} >{isScanning?"Stop Scanning":"Start Scanning"}</button>
+        <button onClick={()=>toggleScanning()} >{isScanning?"Stop Scanning":"Start Scanning"}</button>
       )}
       <div className={styles.scanner + ((initialized && isScanning) ? "" : " "+styles.hidden)}>
         <div className={styles.cameracontainer}>
