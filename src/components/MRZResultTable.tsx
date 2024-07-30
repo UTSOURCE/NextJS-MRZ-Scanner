@@ -1,6 +1,7 @@
 import { CodeParser, CodeParserModule, ParsedResultItem } from "dynamsoft-code-parser";
 import { CoreModule } from "dynamsoft-core";
 import { useEffect, useRef, useState } from "react";
+import "./MRZResultTable.css"
 
 export interface MRZResultTableProps {
   MRZ:string;
@@ -64,7 +65,7 @@ const MRZResultTable: React.FC<MRZResultTableProps> = (props:MRZResultTableProps
         <div>{(props.MRZ && parser.current)?"Parsing...":""}</div>
       )}
       {fields &&(
-        <table>
+        <table className="resultTable">
           <thead>
             <tr>
               <th>Field</th>
