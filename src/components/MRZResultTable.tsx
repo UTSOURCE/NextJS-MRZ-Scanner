@@ -42,7 +42,6 @@ const MRZResultTable: React.FC<MRZResultTableProps> = (props:MRZResultTableProps
 
   const parse = async () => {
     if (parser.current && props.MRZ) {
-      console.log(props.MRZ)
       let result = await parser.current.parse(props.MRZ);
       let MRZFields = ["documentNumber","passportNumber","issuingState","name","sex","nationality","dateOfExpiry","dateOfBirth"];
       let parsedFields = [];

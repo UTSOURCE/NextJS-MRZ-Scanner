@@ -18,11 +18,9 @@ export default function Home() {
 
   const onScanned = (result:RecognizedTextLinesResult) => {
     setIsScanning(false);
-    console.log(result);
     if (result.textLineResultItems.length>0) {
       let str = "";
       str = result.textLineResultItems[0].text
-      console.log("combined:"+str)
       setMRZ(str);
     }
   }
