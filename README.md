@@ -4,7 +4,7 @@ This is a next.js demo of MRZ scanner using [Dynamsoft Label Recognizer](https:/
 
 [Online demo](https://next-js-mrz-scanner.vercel.app/)
 
-You can apply for a 30-day trial license [here](https://www.dynamsoft.com/customer/license/trialLicense?product=dlr).
+You can apply for a 30-day trial license [here](https://www.dynamsoft.com/customer/license/trialLicense/?product=dcv&package=cross-platform).
 
 ## Getting Started
 
